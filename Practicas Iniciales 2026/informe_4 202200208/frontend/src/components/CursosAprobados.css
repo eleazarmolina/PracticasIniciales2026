@@ -1,0 +1,135 @@
+.cursos-aprobados {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cursos-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.cursos-header h3 {
+    color: #1a1a2e;
+}
+
+.total-creditos {
+    background-color: #e8f5e9;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: #2e7d32;
+}
+
+.total-creditos strong {
+    font-size: 18px;
+}
+
+.lista-cursos {
+    overflow-x: auto;
+    margin-bottom: 20px;
+}
+
+.tabla-cursos {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-cursos th,
+.tabla-cursos td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.tabla-cursos th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #555;
+}
+
+.tabla-cursos tr:hover {
+    background-color: #f9f9f9;
+}
+
+.sin-cursos {
+    text-align: center;
+    color: #888;
+    padding: 30px;
+}
+
+.btn-agregar-curso {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-agregar-curso:hover {
+    background-color: #218838;
+}
+
+.form-agregar-curso {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+}
+
+.form-agregar-curso h4 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.form-agregar-curso .campo {
+    margin-bottom: 15px;
+}
+
+.form-agregar-curso .campo label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.form-agregar-curso .campo select,
+.form-agregar-curso .campo input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.botones-form {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.botones-form button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.botones-form button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+}
+
+.botones-form button[type="submit"]:hover {
+    background-color: #0056b3;
+}
