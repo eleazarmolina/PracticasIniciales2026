@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { estaAutenticado, obtenerUsuarioActual, eliminarToken } from './utils/auth';
 import './App.css';
 
-// Importar componentes
+
 import Login from './components/Login';
 import Registro from './components/Registro';
 import RecuperarPassword from './components/RecuperarPassword';
@@ -13,7 +13,7 @@ import Comentarios from './components/Comentarios';
 import Perfil from './components/Perfil';
 import Navbar from './components/Navbar';
 
-// Componente para rutas protegidas
+
 const RutaProtegida = ({ children, setAuth }) => {
     const [isAuth, setIsAuth] = useState(estaAutenticado());
 
@@ -31,13 +31,13 @@ function App() {
     const [auth, setAuth] = useState(estaAutenticado());
     const [usuario, setUsuario] = useState(obtenerUsuarioActual());
 
-    // Función para verificar autenticación
+   
     const verificarAuth = () => {
         setAuth(estaAutenticado());
         setUsuario(obtenerUsuarioActual());
     };
 
-    // Función para cerrar sesión
+
     const handleLogout = () => {
         eliminarToken();
         setAuth(false);

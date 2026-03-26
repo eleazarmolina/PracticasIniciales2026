@@ -1,11 +1,12 @@
 .navbar {
-    background: rgba(26, 26, 46, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 15px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    background: rgba(26, 26, 46, 0.75);
+    backdrop-filter: blur(12px);
+    padding: 12px 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar-container {
@@ -28,10 +29,10 @@
 }
 
 .navbar-logo-img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: contain;
-    border-radius: 0px;
+    border-radius: 10px;
 }
 
 .navbar-links {
@@ -41,14 +42,31 @@
 }
 
 .nav-link {
-    color: #24a4d6;
+    color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
     font-size: 16px;
-    transition: color 0.3s;
+    transition: all 0.3s;
+    position: relative;
 }
 
 .nav-link:hover {
     color: white;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+}
+
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #fff, #a78bfa);
+    transition: width 0.3s;
+}
+
+.nav-link:hover::after {
+    width: 100%;
 }
 
 .navbar-usuario {
@@ -57,45 +75,50 @@
     gap: 15px;
     margin-left: 20px;
     padding-left: 20px;
-    border-left: 1px solid #444444dc;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 .navbar-usuario span {
     color: white;
     font-size: 14px;
+    font-weight: 500;
 }
 
 .btn-logout {
-    background-color: #dc3545;
+    background-color: rgba(220, 53, 69, 0.9);
+    backdrop-filter: blur(5px);
     color: white;
     border: none;
     padding: 8px 16px;
-    border-radius: 6px;
+    border-radius: 30px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s;
+    font-weight: 600;
+    transition: all 0.3s;
 }
 
 .btn-logout:hover {
-    background-color: #c82333;
+    background-color: #dc3545;
+    transform: scale(1.02);
+    box-shadow: 0 2px 10px rgba(220, 53, 69, 0.4);
 }
 
-/* Responsive para móvil */
-@media (max-width: 768px) {
-    .navbar-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .navbar-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .navbar-usuario {
-        margin-left: 0;
-        padding-left: 0;
-        border-left: none;
-    }
+.avatar {
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
 }
