@@ -1,10 +1,14 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { eliminarToken } from '../utils/auth';
+import { eliminarToken, obtenerUsuarioActual } from '../utils/auth';
 import './Navbar.css';
 
-const Navbar = ({ usuario }) => {
+
+import logo from '../assets/logo.png';
+
+const Navbar = () => {
     const navigate = useNavigate();
+    const usuario = obtenerUsuarioActual();
 
     const handleLogout = () => {
         eliminarToken();
@@ -15,11 +19,12 @@ const Navbar = ({ usuario }) => {
         <nav className="navbar">
             <div className="navbar-container">
                 <Link to="/" className="navbar-logo">
-                    CalificaECYS
+                    <img src={logo} alt="Logo" className="navbar-logo-img" />
+                    <span></span>
                 </Link>
                 
                 <div className="navbar-links">
-                    <Link to="/" className="nav-link">Inicio</Link>
+                    <Link to="/" classYName="nav-link">Inicio</Link>
                     <Link to="/crear-publicacion" className="nav-link">Crear Publicacion</Link>
                     <Link to="/mi-perfil" className="nav-link">Mi Perfil</Link>
                     
@@ -36,3 +41,4 @@ const Navbar = ({ usuario }) => {
 };
 
 export default Navbar;
+

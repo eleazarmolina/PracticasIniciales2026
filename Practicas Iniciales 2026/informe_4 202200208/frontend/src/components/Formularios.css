@@ -53,26 +53,22 @@
 }
 
 button[type="submit"] {
-    background-color: #007bff;
+    background: linear-gradient(45deg, #007bff, #00d4ff);
     color: white;
-    padding: 12px;
     border: none;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 25px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: all 0.3s;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
 }
 
 button[type="submit"]:hover {
-    background-color: #0056b3;
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.8);
 }
-
-button[type="submit"]:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-}
-
 .enlaces {
     display: flex;
     justify-content: space-between;

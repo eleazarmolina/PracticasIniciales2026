@@ -4,7 +4,7 @@ import { registro } from '../services/api';
 import { guardarToken, guardarUsuario } from '../utils/auth';
 import './Formularios.css';
 
-const Registro = () => {
+const Registro = ({ onRegistroSuccess }) => {  // ← Recibe la función
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         registro_academico: '',
@@ -34,6 +34,12 @@ const Registro = () => {
             const response = await registro(formData);
             guardarToken(response.data.token);
             guardarUsuario(response.data.usuario);
+            
+            // Notificar a App que el usuario se registró
+            if (onRegistroSuccess) {
+                onRegistroSuccess();
+            }
+            
             setExito('Registro exitoso. Redirigiendo...');
             setTimeout(() => {
                 navigate('/');

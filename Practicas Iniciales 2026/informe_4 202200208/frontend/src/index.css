@@ -6,8 +6,23 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f2f5;
-    color: #1a1a2e;
+    background-image: url('./assets/fondo.png');  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);  /* oscurece el fondo */
+    z-index: -1;
 }
 
 .container {
@@ -44,7 +59,7 @@ body {
 .btn-volver {
     background: none;
     border: none;
-    color: #007bff;
+    color: #ff0000;
     cursor: pointer;
     font-size: 16px;
     padding: 8px 0;

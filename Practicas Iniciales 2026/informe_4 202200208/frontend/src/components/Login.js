@@ -4,7 +4,7 @@ import { login } from '../services/api';
 import { guardarToken, guardarUsuario } from '../utils/auth';
 import './Formularios.css';
 
-const Login = () => {
+const Login = ({ onLoginSuccess }) => {  // ← Recibe la función
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         registro_academico: '',
@@ -29,6 +29,12 @@ const Login = () => {
             const response = await login(formData);
             guardarToken(response.data.token);
             guardarUsuario(response.data.usuario);
+            
+            // Notificar a App que el usuario inició sesión
+            if (onLoginSuccess) {
+                onLoginSuccess();
+            }
+            
             navigate('/');
         } catch (err) {
             if (err.response && err.response.data) {
